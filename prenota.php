@@ -4,3 +4,35 @@
 //e che non verranno loggati
 ini_set('display_errors', 1);
 ini_set('log_errors', 0);
+
+$host = 'localhost';
+$db = 'tamponi';
+$user = 'root';
+$pass = '';
+
+//Stringa di connessione
+$dsn = 'mysql:host=' . $host . ';dbname=' . $db;
+
+
+$pdo = new PDO($dsn, $user, $pass);
+
+//Variabili al momento costanti, poi verranno prese tramite POST
+$codice_fiscale = 'BGTLSN00N00B157H';
+$giorno = '2021-03-06';
+
+//Query di inserimento preparata
+$sql = "INSERT INTO prenotazioni VALUES(null, :codice_fiscale, :giorno)";
+
+//Inviamo la query al database che la tiene in pancia
+$stmt = $pdo->prepare($sql);
+
+//Inviamo i dati conreti che verranno messi al posto dei segnaposto
+$stmt->execute(
+    [
+        'codice_fiscale' => $codice_fiscale,
+        'giorno' => $giorno
+    ]
+);
+
+
+
