@@ -34,5 +34,9 @@ $stmt->execute(
     ]
 );
 
+//Ridirige il browser verso la pagina indicata nella location
+//Serve come modo diretto per vedere attraverso il browser che la pagina
+//ha effettivamente prodotto un risultato
+header('Location:lista_prenotazioni.php');
 
 
