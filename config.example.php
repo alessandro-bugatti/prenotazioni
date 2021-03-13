@@ -4,6 +4,9 @@
 //Creare un file config.php e inserire le seguenti righe
 //adattandole alla propria configurazione
 
+//Variabili dell'applicazione
+$LUNGHEZZA_CODICE = 10;
+
 
 //Dice a livello dello script che gli errori verranno mostrati
 //e che non verranno loggati
