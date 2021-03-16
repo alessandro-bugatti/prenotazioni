@@ -8,3 +8,5 @@ Partendo da questo spunto, verrà qui sviluppata un'applicazione che risolva que
 ### Funzionalità
 
 - Inserire una **prenotazione** con codice fiscale e data
+- Creazione di un **codice univoco** per ogni prenotazione
+- **Lista** delle prenotazioni effettuate
