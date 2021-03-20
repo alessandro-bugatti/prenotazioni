@@ -1,5 +1,6 @@
 <?php
 
+require 'vendor/autoload.php';
 include_once "config.php";
 
 /**
@@ -13,6 +14,11 @@ function crea_codice(int $length)
     $codice = bin2hex($bytes);
     return $codice;
 }
+
+use League\Plates\Engine;
+
+//Viene creato l'oggetto per la gestione dei template
+$templates = new Engine('./view','tpl');
 
 //Variabili valorizzate tramite POST
 $codice_fiscale = $_POST['codice'];
@@ -37,7 +43,7 @@ $numero_persone = $riga['persone'];
 
 if ($numero_persone >= $PERSONE_MASSIME_PER_GIORNO)
 {
-    echo "Non puoi prenotare perchè ci sono già troppe persone";
+    echo $templates->render('data_non_disponibile', ['giorno' => $giorno]);
 }
 else
 {
@@ -57,12 +63,7 @@ else
         ]
     );
 
-    //Ridirige il browser verso la pagina indicata nella location
-    //Serve come modo diretto per vedere attraverso il browser che la pagina
-    //ha effettivamente prodotto un risultato
-
-    //Reindirizza alla pagine che fornisce un codice univoco all'utente
-    header('Location:mostra_codice.php?codice=' . $codice_univoco);
+    echo $templates->render('mostra_codice', ['codice_univoco' => $codice_univoco]);
 
 }
 
