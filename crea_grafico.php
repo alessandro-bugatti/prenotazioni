@@ -17,7 +17,7 @@ $dataPoints = array(
     array("x"=> 50, "y"=> 52),
     array("x"=> 60, "y"=> 68),
     array("x"=> 70, "y"=> 38),
-    array("x"=> 80, "y"=> 71, "indexLabel"=> "Highest"),
+    array("x"=> 80, "y"=> 280, "indexLabel"=> "Highest"),
     array("x"=> 90, "y"=> 52),
     array("x"=> 100, "y"=> 60),
     array("x"=> 110, "y"=> 36),
@@ -25,6 +25,21 @@ $dataPoints = array(
     array("x"=> 130, "y"=> 41)
 );
 
+//Query per recuperare tutte le prenotazioni
+$sql = "SELECT * FROM prenotazioni ORDER BY codice_univoco";
+
+//Invio la query al server MySQL
+$stmt = $pdo->query($sql);
+
+//Estraggo le righe di risposta che finiranno come vettori in $result
+$result = $stmt->fetchAll();
+
+$dataPoints2 = array();
+foreach ($result as $row)
+{
+        $dataPoints2[] = ["label" => $row['giorno'], "y" => 7];
+}
+
 echo $templates->render('graph', [
-        'data_points' => $dataPoints
+        'data_points' => $dataPoints2
         ]);
