@@ -1,7 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="it">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Esempio</title>
+    <meta charset="UTF-8">
+    <title>Prenotazioni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
     <script>
         window.onload = function () {
 
@@ -10,7 +12,7 @@
                 exportEnabled: true,
                 theme: "light1", // "light1", "light2", "dark1", "dark2"
                 title:{
-                    text: "Simple Column Chart with Index Labels"
+                    text: "Prenotazioni giornaliere"
                 },
                 axisY:{
                     includeZero: true
@@ -20,7 +22,7 @@
                     //indexLabel: "{y}", //Shows y value on all Data Points
                     indexLabelFontColor: "#5A5757",
                     indexLabelPlacement: "outside",
-                    dataPoints: <?php echo json_encode($data_points); ?>
+                    dataPoints: <?= json_encode($data_points); ?>
                 }]
             });
             chart.render();
@@ -29,7 +31,9 @@
     </script>
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<h1>Portale prenotazioni</h1>
+<h2>Prenotazioni giornaliere</h2>
+<div id="chartContainer"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
