@@ -25,3 +25,6 @@ $dsn = 'mysql:host=' . $host . ';dbname=' . $db;
 
 
 $pdo = new PDO($dsn, $user, $pass);
+
+//Trasforma tutti gli errori SQL in eccezioni PHP
+$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
