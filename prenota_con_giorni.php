@@ -27,9 +27,6 @@ $sql = "SELECT gen_date AS giorno, prenotati
 //Invio la query al server MySQL
 $stmt = $pdo->prepare($sql);
 
-$PERSONE_MASSIME_PER_GIORNO = 2;
-$GIORNI_PRENOTABILI = 7;
-
 $stmt->execute([
     'n_giorni' => $GIORNI_PRENOTABILI,
     'massimo_persone' => $PERSONE_MASSIME_PER_GIORNO
