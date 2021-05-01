@@ -26,7 +26,7 @@
                      <a href="login.php">Login</a>
                      <?php else: ?>
                      <span>Operazioni</span>
-                     <a href="#" class="sublink-1">Mostra tamponi prenotati</a>
+                     <a href="lista_prenotazioni.php" class="sublink-1">Mostra tutte le prenotazioni</a>
                      <a href="#" class="sublink-1">Esegui un tampone</a>
                      <a href="logout.php">Logout</a>
                      <?php endif ?>
