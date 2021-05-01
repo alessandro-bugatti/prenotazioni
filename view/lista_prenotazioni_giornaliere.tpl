@@ -1,4 +1,6 @@
 <?php $this->layout('main',['argomento' => 'Lista delle prenotazioni giornaliere']); ?>
+
+<h5>Stai accedendo come <mark><?=$username?></mark></h5>
 <table class="striped">
     <caption>Prenotazioni</caption>
     <thead>
