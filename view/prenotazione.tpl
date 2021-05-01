@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Prenotazioni</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
-</head>
-<body>
-    <h1>Portale prenotazioni</h1>
+<?php $this->layout('main',['argomento' => 'Prenota il tuo tampone']); ?>
+
     <p>Inserisci i tuoi dati per prenotare un tampone</p>
     <form action="prenota.php" method="post">
         <fieldset>
@@ -18,5 +11,3 @@
             <input type="submit" value="Invia la tua richiesta">
         </fieldset>
     </form>
-</body>
-</html>
