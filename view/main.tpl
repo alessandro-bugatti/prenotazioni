@@ -6,12 +6,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
 </head>
 <body>
-    <header>
-        <?php if(isset($_SESSION['username'])): ?>
-        Ciao <?=$_SESSION['username'] ?> - <a href="logout.php">Logout</a>
-        <?php endif; ?>
-    </header>
-    <h1><?= $argomento ?> </h1>
-    <?= $this->section('content') ?>
+
+    <div class="container">
+        <div class="row">
+            <header class="sticky">
+                <button><img alt="logo" src="images/covid.jpg"></button>
+                <button>Prenotazioni tamponi</button>
+            </header>
+        </div>
+         <!--  This is the hamburger menu for mobile screens. Standard navigation, really!  -->
+         <div class="row">
+             <label for="drawer-control" class="drawer-toggle persistent"></label>
+             <input type="checkbox" id="drawer-control" class="drawer persistent">
+             <div class="col-md-4">
+                 <label for="drawer-control" class="drawer-close"></label>
+                 <nav>
+                     <a href="index.php">Home</a>
+                     <?php if(!isset($_SESSION['username'])): ?>
+                     <a href="login.php">Login</a>
+                     <?php else: ?>
+                     <span>Operazioni</span>
+                     <a href="#" class="sublink-1">Mostra tamponi prenotati</a>
+                     <a href="#" class="sublink-1">Esegui un tampone</a>
+                     <a href="logout.php">Logout</a>
+                     <?php endif ?>
+                 </nav>
+             </div>
+             <div class="col-sm-11">
+                 <h1><?= $argomento ?> </h1>
+                 <?= $this->section('content') ?>
+             </div>
+         </div>
+    </div>
 </body>
 </html>
