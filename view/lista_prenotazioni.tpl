@@ -1,6 +1,6 @@
-<?php $this->layout('main',['argomento' => 'Lista delle prenotazioni']); ?>
+<?php $this->layout('main',['argomento' => 'Lista di tutte le prenotazioni']); ?>
 
-<h1>Ciao <?=$username?></h1>
+<h5>Stai accedendo come <mark><?=$username?></mark></h5>
 <table class="striped">
     <caption>Prenotazioni</caption>
     <thead>
