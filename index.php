@@ -1,6 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
+include_once 'config.php';
 
 use League\Plates\Engine;
 

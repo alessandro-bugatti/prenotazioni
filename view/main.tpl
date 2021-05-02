@@ -23,13 +23,13 @@
                  <nav>
                      <a href="index.php">Home</a>
                      <?php if(!isset($_SESSION['username'])): ?>
-                     <a href="login.php">Login</a>
+                         <a href="login.php">Login</a>
                      <?php else: ?>
-                     <span>Operazioni</span>
-                     <a href="lista_prenotazioni.php" class="sublink-1">Mostra tutte le prenotazioni</a>
-                         <a href="lista_prenotazioni_giornaliere.php" class="sublink-1">Mostra le prenotazioni di oggi</a>
-                     <a href="#" class="sublink-1">Esegui un tampone</a>
-                     <a href="logout.php">Logout</a>
+                         <span>Operazioni</span>
+                         <a href="lista_prenotazioni.php" class="sublink-1">Mostra tutte le prenotazioni</a>
+                             <a href="lista_prenotazioni_giornaliere.php" class="sublink-1">Mostra le prenotazioni di oggi</a>
+                         <a href="esegui_tampone.php" class="sublink-1">Esegui un tampone</a>
+                         <a href="logout.php">Logout</a>
                      <?php endif ?>
                  </nav>
              </div>
