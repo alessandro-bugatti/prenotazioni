@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <header class="sticky">
-                <button><img alt="logo" src="https://icongr.am/clarity/dna.svg?size=32&color=currentColor"></button>
+                <button><img alt="logo" src="images/dna.svg?size=32&color=currentColor"></button>
                 <button>Prenotazioni tamponi</button>
             </header>
         </div>
