@@ -1,7 +1,8 @@
 <?php $this->layout('main_chart',
         [
                 'argomento' => 'Grafico delle prenotazioni',
-                'data_points' => $data_points
+                'data_points' => $data_points,
+                'username' => $username
         ]); ?>
 
 <div id="chartContainer"></div>
