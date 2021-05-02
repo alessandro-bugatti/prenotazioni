@@ -1,6 +1,7 @@
 <?php $this->layout('main',['argomento' => 'Registrazione']); ?>
 
-<div class="container">
+<mark class="secondary">Attenzione <?= $username ?>, registrando un utente avrà i tuoi stessi privilegi</mark>
+
     <div class="row">
         <div class="col-sm">
         </div>
@@ -22,7 +23,7 @@
                         <input type="password" value="" id="pwd" placeholder="password" name = "password2">
                     </div>
                     <div class="input-group fluid">
-                        <input type="submit" class="primary" value = "Registrati">
+                        <input type="submit" class="primary" value = "Registra">
                     </div>
                 </fieldset>
             </form>
@@ -30,4 +31,4 @@
         <div class="col-sm">
         </div>
     </div>
-</div>
+
