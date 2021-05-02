@@ -27,7 +27,8 @@
                      <?php else: ?>
                          <span>Operazioni</span>
                          <a href="lista_prenotazioni.php" class="sublink-1">Mostra tutte le prenotazioni</a>
-                             <a href="lista_prenotazioni_giornaliere.php" class="sublink-1">Mostra le prenotazioni di oggi</a>
+                         <a href="lista_prenotazioni_giornaliere.php" class="sublink-1">Mostra le prenotazioni di oggi</a>
+                         <a href="mostra_grafico_prenotazioni.php" class="sublink-1">Mostra il grafico delle prenotazioni</a>
                          <a href="esegui_tampone.php" class="sublink-1">Esegui un tampone</a>
                          <a href="registrazione.php" class="sublink-1">Registra un nuovo sanitario</a>
                          <a href="logout.php">Logout</a>

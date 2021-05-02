@@ -25,30 +25,39 @@ function convert($result): array
 //Viene creato l'oggetto per la gestione dei template
 $templates = new Engine('./view', 'tpl');
 
-$inizio = $_POST['inizio'];
-$fine = $_POST['fine'];
+//Se sei una persona che ha fatto il login
+if (isset($_SESSION['username'])) {
 
-//Query per recuperare tutte le prenotazioni
-$sql = "SELECT giorno, count(*) as numero_persone 
-        FROM prenotazioni
-        WHERE giorno BETWEEN :inizio AND :fine
-        GROUP BY giorno
-        ORDER BY giorno";
+    $username = $_SESSION['username'];
 
-//Invio la query al server MySQL
-$stmt = $pdo->prepare($sql);
-$stmt->execute(
-    [
-        'inizio' => $inizio,
-        'fine' =>$fine
-    ]
-);
+    $inizio = $_POST['inizio'];
+    $fine = $_POST['fine'];
 
-//Estraggo le righe di risposta che finiranno come vettori in $result
-$result = $stmt->fetchAll();
+    //Query per recuperare tutte le prenotazioni
+    $sql = "SELECT giorno, count(*) as numero_persone 
+            FROM prenotazioni
+            WHERE giorno BETWEEN :inizio AND :fine
+            GROUP BY giorno
+            ORDER BY giorno";
 
-$dataPoints = convert($result);
+    //Invio la query al server MySQL
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(
+        [
+            'inizio' => $inizio,
+            'fine' => $fine
+        ]
+    );
 
-echo $templates->render('grafico_prenotazioni', [
-        'data_points' => $dataPoints
-        ]);
+    //Estraggo le righe di risposta che finiranno come vettori in $result
+    $result = $stmt->fetchAll();
+
+    $dataPoints = convert($result);
+
+    echo $templates->render('grafico_prenotazioni', [
+        'data_points' => $dataPoints,
+        'username' => $username
+    ]);
+}
+else
+    echo $templates->render('utente_non_autorizzato');
