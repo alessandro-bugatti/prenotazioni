@@ -40,8 +40,8 @@ $target_file = $target_dir . basename($codice_univoco . '.' .
                             $imageFileType);
 
 //Qui sarebbero da inserire i controlli se il caricamento è andato a buon fine o no
-//if ($uploadOk && move_uploaded_file($_FILES["documento"]["tmp_name"], $target_file)) {
-//DA FARE
+if (!($uploadOk && move_uploaded_file($_FILES["documento"]["tmp_name"], $target_file)))
+    echo "Problema nell'upload";
 
 //Controllo sul numero di persone per giorno
 $sql = "SELECT COUNT(*) AS persone FROM prenotazioni WHERE giorno = :giorno_scelto";
